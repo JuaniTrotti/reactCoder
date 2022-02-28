@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.cFlex {
+    display: flex;
+}
+
+.header {
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    width: 100%;
+    background-color: rgb(228, 228, 228);
+
+    .containerNav {
+        width: 100%;
+        padding: 10px 50px;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
