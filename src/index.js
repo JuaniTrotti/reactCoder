@@ -6,4 +6,5 @@ import App from './App'
 import "./components/style.scss"
 
 //4) renderizar App en el DOM
-ReactDOM.render(<App/> ,document.querySelector('#root')) 
+ReactDOM.render(<App/> ,document.querySelector('#root'))
+ 
