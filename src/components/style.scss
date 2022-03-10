@@ -54,7 +54,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    flex-wrap: wrap;
     flex-grow: 1;
     gap: 20px;
 
@@ -104,3 +103,41 @@
     }    
 }
 // ItemCount End
+
+// ItemList Start
+.containerItems {
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 4%;
+}
+// ItemList End
+
+// Item Start
+.cardContainer {
+    height: 380px;
+    width: 22%;
+    background-color: rgb(199, 199, 199);
+    border-radius: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .cardImg {
+        height: 70%;
+        width: 100%;
+        background-color: rgb(138, 138, 138);
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    .cardInfo {
+        width: 80%;
+        height: 30%;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+// Item End

@@ -1,0 +1,45 @@
+
+[
+    {
+        "id": "1",
+        "nombre": "obra1",
+        "precio": "1500",
+        "dim": "60cm x 50cm"
+    },
+    {
+        "id": "2",
+        "nombre": "obra2",
+        "precio": "1500",
+        "dim": "40cm x 60cm"
+    },
+    {
+        "id": "3",
+        "nombre": "obra3",
+        "precio": "2000",
+        "dim": "40cm x 60cm"
+    },
+    {
+        "id": "4",
+        "nombre": "obra4",
+        "precio": "1000",
+        "dim": "60cm x 40cm"
+    },
+    {
+        "id": "5",
+        "nombre": "obra5",
+        "precio": "1000",
+        "dim": "60cm x 40cm"
+    },
+    {
+        "id": "6",
+        "nombre": "obra6",
+        "precio": "1000",
+        "dim": "60cm x 40cm"
+    },
+    {
+        "id": "7",
+        "nombre": "obra7",
+        "precio": "1000",
+        "dim": "60cm x 40cm"
+    }
+]
