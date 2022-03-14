@@ -1,20 +1,14 @@
-const Item = (props) => {
-
-  console.log(props.productos)
+const Item = ({producto}) => {
   return (
     <>
-        {props.productos.map((i)=>{
-            return (
-                <div className="cardContainer cFlex">
-                    <div className="cardImg">
-                    </div>
-                    <div className="cardInfo cFlex">
-                        <h2>{i.nombre}</h2>
-                        <h2>{i.precio}</h2>
-                    </div>
-                </div>
-            )      
-        })} 
+        <div className="cardContainer cFlex">
+            <div className="cardImg">
+            </div>
+            <div className="cardInfo cFlex">
+                <h2>{producto.nombre}</h2>
+                <h2>{producto.precio}</h2>
+            </div>
+        </div>
     </>
   )
 }
