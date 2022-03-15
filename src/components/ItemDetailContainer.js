@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
 
     pedido
     .then((respuesta)=>{return respuesta.json()})
-    .then((item)=>{setTimeout(()=>{setItem(item)}, 0)})
+    .then((item)=>{setTimeout(()=>{setItem(item)}, 2000)})
     .catch(()=>{console.log("error")})
   }, [])
 
