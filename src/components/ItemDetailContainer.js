@@ -15,8 +15,6 @@ const ItemDetailContainer = () => {
     .catch(()=>{console.log("error")})
   }, [])
 
-  console.log(item)
-
   return (
     <>
         <div className='containerItem cFlex'>
