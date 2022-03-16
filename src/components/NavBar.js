@@ -1,13 +1,16 @@
 import CartWidget from "./CartWidget";
+import { NavLink, Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
         <header className="header cFlex">
             <section className="containerHeader cFlex">
-                <h2 className="tLogo">Aripto</h2>
+                <Link to="/" className="tLogo">Aripto</Link>
                 <nav className="containerNav cFlex">
-                    <a href="#" className="link">Shop</a>
-                    <a href="#" className="link">About Us</a>
+                    <NavLink to="categoria/smartwatch" className="link">SmartWatch</NavLink>
+                    <NavLink to="categoria/headphones" className="link">Headphones</NavLink>
+                    <NavLink to="categoria/shop" className="link">Shop</NavLink>
+                    <NavLink to="categoria/AboutUs" className="link">About Us</NavLink>
                     <CartWidget/>
                 </nav>
             </section>
