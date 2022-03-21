@@ -3,5 +3,6 @@
     "nombre": "obra1",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id erat vel ipsum euismod tempor. Maecenas rhoncus augue quis velit rhoncus, ac auctor ligula sagittis. Vivamus in euismod tortor. Sed varius, nisl id congue pulvinar, massa nulla interdum lectus, at tincidunt ante sapien nec elit. Pellentesque lectus dolor, fringilla eget laoreet ac, molestie quis magna.",
     "precio": "$4000",
+    "stock": "5",
     "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"
 }

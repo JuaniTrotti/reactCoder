@@ -1,5 +1,4 @@
 import ItemList from "./ItemList"
-import ItemCount from "./ItemCount"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 
@@ -98,7 +97,6 @@ const ItemListContainer = (props) => {
     <>
       <div className="containerList cFlex">
           <h1 className="tTitulo">{props.nombre}</h1>
-          {/* <ItemCount initial={1} stock={7}/> */}
           <ItemList producto={produ}/>
       </div>
     </>

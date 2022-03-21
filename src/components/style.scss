@@ -88,13 +88,12 @@
     justify-content: center;
     border-radius: 1rem;
     background-color: rgb(233, 233, 233);
-    gap: 10px;
+    padding: 3%;
 
-    width: 20%;
-    height: 10%;
+    width: 200px;
 
     .containerCountBtn {
-        width: 90%;
+        width: 100%;
         justify-content: space-between;
         align-items: center;
 
@@ -108,7 +107,7 @@
     }
 
     .containerAddBtn {
-        width: 90%;
+        width: 100%;
 
         .btnAdd {
             width: 100%;
@@ -229,7 +228,7 @@
         width: 100%;
         font-size: 4rem;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: space-between;
 
         .itemPrecio {
             font-size: 4rem;
