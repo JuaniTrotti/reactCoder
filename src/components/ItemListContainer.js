@@ -75,6 +75,8 @@ const ItemListContainer = (props) => {
   const [loading, setLoad] = useState(true)
   const {id} = useParams()
 
+  // getProduct(productosData)
+
   useEffect(()=>{
     const pedido = fetch(productosData)
 

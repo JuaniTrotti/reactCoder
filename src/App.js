@@ -1,13 +1,16 @@
 import NavBar from "./components/NavBar"
 import Main from "./components/Main"
 import { BrowserRouter } from "react-router-dom"
+import Context from "./components/Context"
 
 const App = () => {
     return (
-        <BrowserRouter>
-            <NavBar/>
-            <Main/>
-        </BrowserRouter>
+        <Context>
+            <BrowserRouter>
+                <NavBar/>
+                <Main/>
+            </BrowserRouter>
+        </Context>
     )
 }
 
