@@ -6,17 +6,13 @@ import { NavLink } from "react-router-dom";
 
 const ItemDetail = ({item}) => {
 
-    const resultado = useContext(cartContext)
+    const {addItem} = useContext(cartContext)
     const [selec, setSelec] = useState(false)
     
     const onAdd = (unidadesSelec) => {
         if (unidadesSelec != undefined) {
             setSelec(unidadesSelec)
         }
-    }
-
-    const handleConfirm = () => {
-        resultado.addItem(item.id, selec)
     }
 
     return (
@@ -35,7 +31,8 @@ const ItemDetail = ({item}) => {
                 </div>
                 <div className='priceContainer cFlex'>
                     <h2 className='itemPrecio'>{item.precio}</h2>
-                    {selec == false ? <ItemCount initial={1} stock={item.stock} onAdd={onAdd}/> : <NavLink to="/carrito" onClick={handleConfirm}>Ir al carrito</NavLink>}
+                    {selec == false ? <ItemCount initial={1} stock={item.stock} onAdd={onAdd}/> 
+                                    : <NavLink to="/carrito" onClick={() => {addItem(item, selec)}}>Ir al carrito</NavLink>}
                 </div>
             </section>
         </>

@@ -236,3 +236,43 @@
     }
 }
 // ItemDetail End
+
+// CartWidget Start
+
+.containerCart {
+    align-items: center;
+    gap: 10px;
+}
+// CartWidget End
+
+// CartContainer Start
+
+.cartContainer {
+    width: 100%;
+    height: auto;
+    margin: 5% 0;
+
+    justify-content: center;
+
+    .cartItemContainer {
+        width: 80%;
+        flex-direction: column;
+        gap: 30px;
+
+        p {
+            font-size: 2rem;
+        }
+
+        .itemCart {
+            width: 100%;
+            gap: 40px;
+            
+            
+            p {
+                font-size: 2rem;
+            }
+        }
+    }
+
+}
+// CartContainer End

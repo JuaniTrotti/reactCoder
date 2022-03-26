@@ -7,7 +7,7 @@ const productosData = [
     id: "1",
     categoria: "smartwatch",
     nombre: "obra1",
-    precio: "1500",
+    precio: 1500,
     dim: "60cm x 50cm",
     img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"
   },
@@ -15,7 +15,7 @@ const productosData = [
     id: "2",
     categoria: "smartwatch",
     nombre: "obra2",
-    precio: "1500",
+    precio: 1500,
     dim: "40cm x 60cm",
     img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"
   },
@@ -23,7 +23,7 @@ const productosData = [
     id: "3",
     categoria: "smartwatch",
     nombre: "obra3",
-    precio: "2000",
+    precio: 2000,
     dim: "40cm x 60cm",
     img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"
   },
@@ -31,7 +31,7 @@ const productosData = [
     id: "4",
     categoria: "smartwatch",
     nombre: "obra4",
-    precio: "1000",
+    precio: 1000,
     dim: "60cm x 40cm",
     img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"
   },
@@ -39,7 +39,7 @@ const productosData = [
     id: "5",
     categoria: "headphones",
     nombre: "obra5",
-    precio: "1000",
+    precio: 1000,
     dim: "60cm x 40cm",
     img: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
   },
@@ -47,7 +47,7 @@ const productosData = [
     id: "6",
     categoria: "headphones",
     nombre: "obra6",
-    precio: "1000",
+    precio: 1000,
     dim: "60cm x 40cm",
     img: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
   },
@@ -55,7 +55,7 @@ const productosData = [
     id: "7",
     categoria: "headphones",
     nombre: "obra7",
-    precio: "1000",
+    precio: 1000,
     dim: "60cm x 40cm",
     img: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
   },
@@ -63,7 +63,7 @@ const productosData = [
     id: "8",
     categoria: "headphones",
     nombre: "obra8",
-    precio: "1000",
+    precio: 1000,
     dim: "60cm x 40cm",
     img: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
 }
