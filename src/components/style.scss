@@ -4,6 +4,15 @@
     font-size: 12px;
 }
 
+.link {
+    text-decoration: none;
+    color: black
+}
+
+.texto {
+    font-size: 2rem;
+}
+
 .cFlex {
     display: flex;
 }
@@ -248,14 +257,17 @@
 // CartContainer Start
 
 .cartContainer {
-    width: 100%;
+    width: 60%;
     height: auto;
     margin: 5% 0;
+    flex-direction: column;
+    gap: 20px;
 
     justify-content: center;
+    // align-items: center;
 
     .cartItemContainer {
-        width: 80%;
+        width: 100%;
         flex-direction: column;
         gap: 30px;
 
@@ -264,12 +276,35 @@
         }
 
         .itemCart {
+            justify-content: space-between;
             width: 100%;
             gap: 40px;
             
             
             p {
                 font-size: 2rem;
+            }
+        }
+        .totalContainer {
+            justify-content: space-between;
+        }
+    }
+
+    .opContainer {
+        width: 100%;
+        justify-content: flex-start;
+
+        .btnSc {
+            width: 20%;
+            height: 50px;
+            border-radius: 1rem;
+            background-color: rgb(233, 233, 233);
+            font-size: 2rem;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                cursor: pointer;
             }
         }
     }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import { cartContext } from './Context'
+import { NavLink } from 'react-router-dom'
 
 const CartContainer = () => {
 
@@ -19,13 +20,18 @@ const CartContainer = () => {
                 <button onClick={()=>{removeItem(i.item.id)}}>Eliminar</button>
               </div>
           })}
-          <div>
+          <div className='totalContainer cFlex'>
             <p>Precio a pagar: ${total}</p>
             <button onClick={()=>{clear()}}>Vaciar Carro</button>
           </div>
         </div>
-        : <h1>No hay productos en el carrito</h1>
+        : <h1 className='texto'>No hay productos en el carrito</h1>
       }
+      <div className='opContainer cFlex'>
+        <div className='btnSc cFlex'>
+          <NavLink to="/" className='texto link'>Seguir comprando</NavLink>
+        </div>
+      </div>
     </div> 
   )
 }
