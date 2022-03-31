@@ -3,15 +3,15 @@ import { Link } from "react-router-dom"
 const Item = ({producto}) => {
   return (
     <>
-      <Link to={`/item/${producto.nombre}`} className="cardContainer cFlex">
+      <Link to={`/item/${producto.item.name}`} className="cardContainer cFlex">
           <div className="cardImg">
             <div className="imgCardContainer">
-              <img src={producto.img} alt="imagenProducto" className="imgCard"/>
+              <img src={producto.item.image} alt="imagenProducto" className="imgCard"/>
             </div>
           </div>
           <div className="cardInfo cFlex">
-              <h2>{producto.nombre}</h2>
-              <h2>{producto.precio}</h2>
+              <h2>{producto.item.name}</h2>
+              <h2>{producto.item.price}</h2>
           </div>
       </Link>
     </>

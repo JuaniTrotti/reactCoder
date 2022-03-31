@@ -3,10 +3,13 @@ import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
 
+
 const ItemDetailContainer = () => {
 
   const [item, setItem] = useState({})
   const {id} = useParams()
+
+  console.log(id)
 
   useEffect(()=>{
     const pedido = fetch(`/json/${id}Data.json`)

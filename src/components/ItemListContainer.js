@@ -1,105 +1,42 @@
-import ItemList from "./ItemList"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-
-const productosData = [
-  {
-    id: "1",
-    categoria: "smartwatch",
-    nombre: "obra1",
-    precio: 1500,
-    dim: "60cm x 50cm",
-    img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"
-  },
-  {
-    id: "2",
-    categoria: "smartwatch",
-    nombre: "obra2",
-    precio: 1500,
-    dim: "40cm x 60cm",
-    img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"
-  },
-  {
-    id: "3",
-    categoria: "smartwatch",
-    nombre: "obra3",
-    precio: 2000,
-    dim: "40cm x 60cm",
-    img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"
-  },
-  {
-    id: "4",
-    categoria: "smartwatch",
-    nombre: "obra4",
-    precio: 1000,
-    dim: "60cm x 40cm",
-    img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"
-  },
-  {
-    id: "5",
-    categoria: "headphones",
-    nombre: "obra5",
-    precio: 1000,
-    dim: "60cm x 40cm",
-    img: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
-  },
-  {
-    id: "6",
-    categoria: "headphones",
-    nombre: "obra6",
-    precio: 1000,
-    dim: "60cm x 40cm",
-    img: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
-  },
-  {
-    id: "7",
-    categoria: "headphones",
-    nombre: "obra7",
-    precio: 1000,
-    dim: "60cm x 40cm",
-    img: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
-  },
-  {
-    id: "8",
-    categoria: "headphones",
-    nombre: "obra8",
-    precio: 1000,
-    dim: "60cm x 40cm",
-    img: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
-}
-]
+import { db } from '../components/Firebase'
+import ItemList from "./ItemList"
+import { getDocs, collection } from 'firebase/firestore'
 
 const ItemListContainer = (props) => {
 
-  const [produ, getProduct] = useState([])
+  const [produ, setProduct] = useState([])
   const [loading, setLoad] = useState(true)
   const {id} = useParams()
 
-  // getProduct(productosData)
-
   useEffect(()=>{
-    const pedido = fetch(productosData)
+    const artColeccion = collection(db, "juanArtReact")
+    const document = getDocs(artColeccion)
 
-    pedido
-      .then((productos)=>{
-        if (id == "headphones") {
-          const pFilter = productosData.filter((i) => i.categoria == "headphones")
-          getProduct(pFilter)
-        } else if(id == "smartwatch") {
-          const pFilter = productosData.filter((i) => i.categoria == "smartwatch")
-          getProduct(pFilter)
-        } else {
-          getProduct(productosData)
-        }
+    document
+      .then((respuesta)=>{
+        const aux = []
+        respuesta.forEach((doc)=>{
+          const obra = {
+            idO: doc.id,
+            ...doc.data()
+          }
+          aux.push(obra)
+        })
+        setProduct(aux)
+        setLoad(false)
       })
       .catch(()=>{console.log("error")})
   }, [id])
+
+  console.log(produ)
 
   return (
     <>
       <div className="containerList cFlex">
           <h1 className="tTitulo">{props.nombre}</h1>
-          <ItemList producto={produ}/>
+          { loading ? <h1>Cargando...</h1> : <ItemList producto={produ}/> }
       </div>
     </>
   )
