@@ -4,7 +4,7 @@ import { useState, useContext} from 'react'
 import { cartContext } from './Context';
 import { NavLink } from "react-router-dom";
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({producto}) => {
 
     const {addItem} = useContext(cartContext)
     const [selec, setSelec] = useState(false)
@@ -15,24 +15,25 @@ const ItemDetail = ({item}) => {
         }
     }
 
+    console.log(producto)
     return (
         <>
             <section className='sectionImg cFlex'>
                 <div className='imgContainer cFlex'>
-                    <img src={item.img} alt="imagen del producto" className='imgItem'/>
+                    <img src={producto.item.image} alt="imagen del producto" className='imgItem'/>
                 </div>
             </section>
             <section className='sectionInfo cFlex'>
                 <div className='nameContainer cFlex'>
-                    <h1 className='itemNombre'>{item.nombre}</h1>
+                    <h1 className='itemNombre'>{producto.item.name}</h1>
                 </div>
                 <div className='descContainer cFlex'>
-                    <p className='itemDesc'>{item.desc}</p>
+                    <p className='itemDesc'>{producto.item.desc}</p>
                 </div>
                 <div className='priceContainer cFlex'>
-                    <h2 className='itemPrecio'>{item.precio}</h2>
-                    {selec == false ? <ItemCount initial={1} stock={item.stock} onAdd={onAdd}/> 
-                                    : <NavLink to="/carrito" onClick={() => {addItem(item, selec)}}>Ir al carrito</NavLink>}
+                    <h2 className='itemPrecio'>{producto.item.price}</h2>
+                    {selec == false ? <ItemCount initial={1} stock={producto.item.stock} onAdd={onAdd}/> 
+                                    : <NavLink to="/carrito" onClick={() => {addItem(producto, selec)}}>Ir al carrito</NavLink>}
                 </div>
             </section>
         </>
