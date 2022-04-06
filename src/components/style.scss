@@ -17,16 +17,41 @@
     display: flex;
 }
 
+body {
+    background-color: #FFFBF4;
+}
+
 // variables Start
 // variables End
+
+// responsiveController Start
+.responsiveController {
+    height: auto;
+    justify-content: center;
+    margin: 20px;
+}
+// responsiveController End
+
+// paginaContainer Start
+.paginaContainer {
+    max-width: 1680px;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+// paginaContainer End
 
 // NavBar Start
 .header {
     justify-content: center;
     align-items: center;
-    height: 8vh;
+    height: 50px;
     width: 100%;
-    background-color: rgb(139, 139, 139);
+    background-color: #252525;
+    border: 4px solid #252525;
+    border-radius: 15px;
     .containerHeader {
         width: 100%;
         padding: 10px 50px;
@@ -69,22 +94,23 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
+
+    border: 4px solid #252525;
+    border-radius: 25px;
 }
 // Main End
 
 // ItemListContainer Start
 .containerList {
-    width: 60%;
-    height: 100%;
-    // padding: 0 15%;
+    width: 95%;
+    height: auto;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     flex-grow: 1;
-    gap: 20px;
+    padding: 20px;
 
     .tTitulo {
-        padding-top: 5%;
         font-size: 4rem;
     }
 }
@@ -311,3 +337,15 @@
 
 }
 // CartContainer End
+
+// FooterContainer Start
+.footerContainer {
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    width: 100%;
+    background-color: #252525;
+    border: 4px solid #252525;
+    border-radius: 15px;
+}
+// FooterContainer End
