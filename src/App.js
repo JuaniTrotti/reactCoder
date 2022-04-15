@@ -1,10 +1,14 @@
+import { BrowserRouter } from "react-router-dom"
+import React from 'react'
 import NavBar from "./components/NavBar"
 import Main from "./components/Main"
 import FooterContainer from "./components/FooterContainer"
-import { BrowserRouter } from "react-router-dom"
 import Context from "./components/Context"
+import { useParams } from "react-router-dom"
 
 const App = () => {
+    const { id } = useParams()
+    console.log(id)
     return (
         <Context>
             <BrowserRouter>
@@ -21,3 +25,5 @@ const App = () => {
 }
 
 export default App;
+
+

@@ -9,15 +9,19 @@ const NavBar = () => {
     return (
         <header className="header cFlex">
             <section className="containerHeader cFlex">
-                <Link to="/" className="tLogo">Aripto</Link>
-                <nav className="containerNav cFlex">
-                    <NavLink to="/categoria/Poster" className="link">Poster</NavLink>
-                    <NavLink to="/categoria/LineArt" className="link">Line Art</NavLink>
-                    <NavLink to="/categoria/Abstract" className="link">Abstract</NavLink>
-                    <NavLink to="/categoria/shop" className="link">Shop</NavLink>
-                    <NavLink to="/categoria/AboutUs" className="link">About Us</NavLink>
+                <div>
+                    <Link to="/" className="tLogo"><img src="./img/icon/logoApp.svg" alt="" /></Link>
+                </div>
+                <div>
+                    <nav className="containerNav cFlex">
+                        <NavLink to="/categoria/Poster" className="link">Poster</NavLink>
+                        <NavLink to="/categoria/LineArt" className="link">Line Art</NavLink>
+                        <NavLink to="/categoria/Abstract" className="link">Abstract</NavLink>
+                    </nav>
+                </div>
+                <div>
                     { cantidad > 0 ? <NavLink to="/carrito"><CartWidget/></NavLink> : null }
-                </nav>
+                </div>
             </section>
         </header>
     )

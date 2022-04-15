@@ -1,0 +1,44 @@
+@import '../base/variables.scss';
+
+// NavBar Start
+.header {
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: $colorPrincipal;
+    border: 4px solid blue;
+    border-radius: 15px;
+    .containerHeader {
+        width: 100%;
+        padding: 10px 50px;
+        justify-content: space-between;
+        align-items: center;
+
+        > a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .tLogo {
+            font-size: 3rem;
+        }
+
+        .containerNav {
+            font-size: 2rem;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+
+            a {
+                color: white;
+                text-decoration: none;
+
+                &.active {
+                    color: black;
+                }
+            }
+        }
+    }
+}
+// NavBar End

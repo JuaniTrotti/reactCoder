@@ -3,7 +3,7 @@ import React from 'react';
 //2) tener la variable reactDOM en el scope
 import ReactDOM from 'react-dom'
 import App from './App'
-import "./components/style.scss"
+import "./sass/style.scss"
 
 //4) renderizar App en el DOM
 ReactDOM.render(<App/> ,document.querySelector('#root'))

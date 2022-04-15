@@ -1,0 +1,28 @@
+@media screen and (min-width: 1700px) {
+    // paginaContainer Start
+    .paginaContainer {
+        max-width: 1680px;
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    // paginaContainer End
+}
+
+@media screen and (max-width: 1700px) {
+       // paginaContainer Start
+       .paginaContainer {
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    // paginaContainer End 
+}
+
+
+
+
