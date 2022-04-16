@@ -1,9 +1,12 @@
 import { useContext } from 'react';
 import { userContext } from './UserContext';
+import { db } from '../components/Firebase';
+import { collection, addDoc } from 'firebase/firestore';
 
 const SignUp = () => {
 
-  const { regEmail, regPass } = useContext(userContext)
+  const { regEmail, regPass, register, passTrue, emailTrue, regNombre, regTelefono } = useContext(userContext)
+  
   return (
     <div className="App">
     <div>
@@ -20,8 +23,20 @@ const SignUp = () => {
           regPass(event.target.value);
         }}
       />
+      <input
+        placeholder="Nombre..."  
+        onChange={(event) => {
+          regNombre(event.target.value);
+        }}
+      />
+      <input
+        placeholder="Telefono..."
+        onChange={(event) => {
+          regTelefono(event.target.value);
+        }}
+      />
 
-      <button> Create User</button>
+      {passTrue && emailTrue ? <button onClick={register}> Create User</button> : null}
     </div>
   </div>
   )

@@ -2,9 +2,11 @@ import CartWidget from "./CartWidget";
 import { NavLink, Link } from "react-router-dom";
 import { useContext} from 'react'
 import { cartContext } from './Context';
+import { userContext } from "../userComponent/UserContext";
 
 const NavBar = () => {
     const {cantidad} = useContext(cartContext)
+    const { logOut, usuario } = useContext(userContext)
 
     return (
         <header className="header cFlex">
@@ -18,8 +20,14 @@ const NavBar = () => {
                     <NavLink to="/categoria/Abstract" className="link">Abstract</NavLink>
                 </nav>
                 <div className="containerLog cFlex">
-                    <NavLink to="/user/LogIn" className="link">LogIn</NavLink>
-                    <NavLink to="/user/SignUp" className="link">SignUp</NavLink>
+                    {  usuario == null ? 
+                        <>
+                            <NavLink to="/user/LogIn" className="link">LogIn</NavLink> 
+                            <NavLink to="/user/SignUp" className="link">SignUp</NavLink> 
+                        </>
+                        :
+                        <button onClick={logOut}> LogOut</button>
+                    }
                     { cantidad > 0 ? <NavLink to="/carrito"><CartWidget/></NavLink> : null }
                 </div>
             </section>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import { cartContext } from './Context'
+import { userContext } from '../userComponent/UserContext'
 import { NavLink } from 'react-router-dom'
 import { db } from '../components/Firebase'
 import { collection, addDoc, serverTimestamp} from 'firebase/firestore'
@@ -8,13 +9,18 @@ import { collection, addDoc, serverTimestamp} from 'firebase/firestore'
 const CartContainer = () => {
 
   const {carrito, total, removeItem, clear} = useContext(cartContext)
+  const {usuario, nombre, telefono } = useContext(userContext)
+
+  console.log(nombre)
+  console.log(telefono)
+  console.log(usuario.email)
 
   const handleOrden = () => {
     const orden = {
       buyer: {
-        nombre: "Juan",
-        telefono: "123456789",
-        email: "juan@gmail.com"
+        nombre: nombre,
+        telefono: telefono,
+        email: usuario.email
       },
       item: carrito,
       date: serverTimestamp(),
