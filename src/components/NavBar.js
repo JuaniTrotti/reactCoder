@@ -12,14 +12,14 @@ const NavBar = () => {
                 <div>
                     <Link to="/" className="tLogo"><img src="./img/icon/logoApp.svg" alt="" /></Link>
                 </div>
-                <div>
-                    <nav className="containerNav cFlex">
-                        <NavLink to="/categoria/Poster" className="link">Poster</NavLink>
-                        <NavLink to="/categoria/LineArt" className="link">Line Art</NavLink>
-                        <NavLink to="/categoria/Abstract" className="link">Abstract</NavLink>
-                    </nav>
-                </div>
-                <div>
+                <nav className="containerNav cFlex">
+                    <NavLink to="/categoria/Poster" className="link">Poster</NavLink>
+                    <NavLink to="/categoria/LineArt" className="link">Line Art</NavLink>
+                    <NavLink to="/categoria/Abstract" className="link">Abstract</NavLink>
+                </nav>
+                <div className="containerLog cFlex">
+                    <NavLink to="/user/LogIn" className="link">LogIn</NavLink>
+                    <NavLink to="/user/SignUp" className="link">SignUp</NavLink>
                     { cantidad > 0 ? <NavLink to="/carrito"><CartWidget/></NavLink> : null }
                 </div>
             </section>

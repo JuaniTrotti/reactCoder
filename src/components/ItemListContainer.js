@@ -10,6 +10,8 @@ const ItemListContainer = (props) => {
   const [loading, setLoad] = useState(true)
   const {id} = useParams()
 
+  console.log(id)
+
   useEffect(()=>{
     if(!id){
       const artColeccion = collection(db, "juanArtReact")
