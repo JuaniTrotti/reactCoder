@@ -29,6 +29,17 @@ const UserContext = ({children}) => {
     setUsuario(currentUser);
   });
 
+  const handleError = (err) => {
+    console.log(typeof(err))
+    if (err === "auth/user-not-found") {
+      setError("no existe el usuario");
+    } else if (err === "auth/wrong-password") {
+      setError("contraseña incorrecta");
+    } else if (err === "auth/email-already-in-use") {
+      setError("el email ya esta en uso");
+    }
+  }
+
   const cleanReg = () => {
     setRegisterEmail("");
     setRegisterPassword("");
@@ -94,7 +105,7 @@ const UserContext = ({children}) => {
       cleanReg()
 
     } catch (error) {
-      console.log(error.message)
+      console.log(error.code)
     }
   }
 
@@ -108,7 +119,8 @@ const UserContext = ({children}) => {
       setError("")
     } catch (error) {
       console.log(error.code);
-      setError(error.code); 
+      // setError(error.code);
+      handleError(error.code)
     }
   }
 

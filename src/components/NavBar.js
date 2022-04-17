@@ -11,7 +11,7 @@ const NavBar = () => {
     return (
         <header className="header cFlex">
             <section className="containerHeader cFlex">
-                <div>
+                <div className="logoIn cFlex">
                     <Link to="/" className="tLogo"><img src="./img/icon/logoApp.svg" alt="" /></Link>
                 </div>
                 <nav className="containerNav cFlex">
