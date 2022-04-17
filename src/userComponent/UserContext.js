@@ -22,45 +22,32 @@ const UserContext = ({children}) => {
   const [emailTrue, setEmailTrue] = useState(false);
 
   const [usuario, setUsuario] = useState({});
+
+  const [error, setError] = useState("");
     
   onAuthStateChanged(auth, (currentUser) => {
     setUsuario(currentUser);
   });
 
-  const handleRegister = () => {
-    const usuario = {
-      email: registerEmail,
-      nombre: nombre,
-      telefono: telefono
-    }
-
-    console.log(nombre)
-    console.log(telefono)
-
-    const usuarioCollection = collection(db, "user")
-    const userDoc = addDoc(usuarioCollection, usuario)
-    userDoc
-    .then(() => {
-      console.log("Usuario creado")
-    })
-    .catch(()=>console.log("Error al crear usuario"))
+  const cleanReg = () => {
+    setRegisterEmail("");
+    setRegisterPassword("");
+    setNombre("");
+    setTelefono("");
   }
 
   const regNombre = (i) => {
     setNombre(i)
-    console.log(nombre)
   }
 
   const regTelefono = (i) => {
     setTelefono(i)
-    console.log(telefono)
   }
 
   const regEmail = (i) => {
     setRegisterEmail(i) 
     if (validator.isEmail(registerEmail)) {
       setEmailTrue(true)
-      console.log(emailTrue)
     } else {
       console.log("no es email")
     }
@@ -70,8 +57,6 @@ const UserContext = ({children}) => {
     setRegisterPassword(i)
     if (validator.isStrongPassword(registerPassword)) {
       setPassTrue(true)
-      handleRegister()
-      console.log(passTrue)
     } else {
       console.log("no es password")
     }
@@ -79,11 +64,9 @@ const UserContext = ({children}) => {
 
   const logEmail = (i) => {
     setLoginEmail(i)
-    console.log(validator.isEmail(loginEmail))
   }
   const logPass = (i) => {
     setLoginPassword(i)
-    console.log(validator.isStrongPassword(loginPassword))
   }
 
   const register = async () => {
@@ -93,8 +76,23 @@ const UserContext = ({children}) => {
         registerEmail,
         registerPassword
       );
-      handleRegister()
-      console.log(usuario)
+
+      const datosUser = {
+        email: registerEmail,
+        nombre: nombre,
+        telefono: telefono
+      }
+  
+      const usuarioCollection = collection(db, "user")
+      const userDoc = addDoc(usuarioCollection, datosUser)
+      userDoc
+      .then(() => {
+        console.log("Usuario creado")
+      })
+      .catch(()=>console.log("Error al crear usuario"))
+
+      cleanReg()
+
     } catch (error) {
       console.log(error.message)
     }
@@ -107,15 +105,18 @@ const UserContext = ({children}) => {
         loginEmail,
         loginPassword
       );
-      console.log(usuario);
+      setError("")
     } catch (error) {
-      console.log(error.message);
+      console.log(error.code);
+      setError(error.code); 
     }
   }
 
   const logOut = async () => {
     await signOut(auth)
     setUsuario({})
+    setLoginEmail("")
+    setLoginPassword("")
   }
 
 
@@ -128,6 +129,7 @@ const UserContext = ({children}) => {
     usuario : usuario,
     nombre : nombre,
     telefono : telefono,
+    error : error,
 
     regEmail : regEmail,
     regPass : regPass,
