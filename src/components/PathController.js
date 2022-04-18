@@ -3,6 +3,7 @@ import React from 'react'
 import NavBar from './NavBar'
 import Main from "./Main"
 import FooterContainer from "./FooterContainer"
+import Banner from './Banner'
 
 import User from '../userComponent/User'
 
@@ -16,6 +17,7 @@ const PathController = () => {
             <div className="responsiveController cFlex">
                 <div className="paginaContainer cFlex">
                     <NavBar/>
+                    <Banner/>
                     <Main/>
                     <FooterContainer/>
                 </div>

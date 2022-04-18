@@ -9,6 +9,17 @@
         gap: 10px;
     }
     // paginaContainer End
+
+    //navbar Start
+    .header {
+        align-items: center;
+        justify-content: center;
+        
+        .containerHeader {
+            max-width: 1680px;
+        }
+    }
+    //navbar End
 }
 
 @media screen and (max-width: 1700px) {
@@ -22,7 +33,3 @@
     }
     // paginaContainer End 
 }
-
-
-
-
