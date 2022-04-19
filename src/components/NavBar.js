@@ -4,6 +4,7 @@ import { useContext} from 'react'
 import { cartContext } from './Context';
 import { userContext } from "../userComponent/UserContext";
 
+
 const NavBar = () => {
     const {cantidad} = useContext(cartContext)
     const { logOut, usuario } = useContext(userContext)
@@ -33,7 +34,7 @@ const NavBar = () => {
                         :
                         <div className="logOutContainer cFlex">  
                             <div className="nameContainer cFlex">
-                                <p className="name">trotti</p>   
+                                <p className="name">{usuario.email}</p> 
                             </div>
                             <div className="logOutBtnContainer cFlex">
                                 <button onClick={logOut} className="btnLogOut">LogOut</button>

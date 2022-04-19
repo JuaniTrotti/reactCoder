@@ -216,8 +216,8 @@ body::-webkit-scrollbar {
 // ItemListContainer Start
 .containerList {
     width: 100%;
-    // height: auto;
-    height: 100%;
+    // height: 100%;
+    min-height: calc(100vh - 758px);
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -538,14 +538,10 @@ body::-webkit-scrollbar {
 // CartContainer Start
 
 .cartContainer {
-    width: 60%;
-    height: auto;
-    margin: 5% 0;
+    width: 100%;
+    min-height: calc(100vh - 100px);
     flex-direction: column;
-    gap: 20px;
-
     justify-content: center;
-    // align-items: center;
 
     .cartItemContainer {
         width: 100%;
@@ -633,3 +629,116 @@ body::-webkit-scrollbar {
     }
 }
 // FooterContainer End
+
+// SignUp Start
+.inicioBtn {
+    position: absolute;
+    left: 80px;
+    top: 60px;
+}
+.signUpContainer {
+    width: 100%;
+    height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+
+    .inputContainer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 35%;
+        height: 60%;
+        background-color: #2A2A2A;
+        border-radius: 4px;
+        filter: drop-shadow(0px 0px 10px rgba(17, 17, 17, 0.5));
+
+        .containerForm {
+            width: 60%;
+            height: 90%;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            .titleUser {
+                h3 {
+                    font-family: var(--font-texto);
+                    font-size: 4rem;
+                    color: white;
+                }
+            }
+
+            .inputsContainer {
+                flex-direction: column;
+                gap: 10px;
+
+                .inCon {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+
+                    .text {
+                        font-size: 1.5rem;
+                        font-family: var(--font-light);
+                        color: rgb(221, 221, 221);
+                    }
+
+                    .inputTexto {
+                        width: calc(100% - 14px);
+                        height: 40px;
+                        font-size: 1.5rem;
+                        font-family: var(--font-light);
+                        padding-left: 10px;
+                        background-color: #2A2A2A;
+                        border: 2px solid rgb(85, 85, 85);
+                    }
+                }
+            }
+
+            .errorContainer {
+                width: 100%;
+                justify-content: flex-start;
+
+                .error {
+                    font-size: 2rem;
+                    font-family: var(--font-black);
+                    color: rgb(211, 92, 92);
+                }
+            }
+
+            .containerBtn {
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+
+                .btnCon {
+                    width: 45%;
+                    height: 45px;
+                    border: 2px solid white;
+                    border-radius: 4px;
+                    background-color: #ffffff;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none;
+
+                    .textoBtn {
+                        font-size: 1.5rem;
+                        font-family: var(--font-light);
+                        color: $colorPrincipal;
+                        border: none;
+                        background-color: #ffffff;
+
+                        & bloq {
+                            pointer-events: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .inputTexto {
+        width: 100%;
+        color: white;
+    }
+}
+// SignUp End

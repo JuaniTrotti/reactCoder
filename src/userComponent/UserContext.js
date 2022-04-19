@@ -3,7 +3,7 @@ import validator from "validator"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, } from "firebase/auth";
 import { auth } from "../components/Firebase";
 import { db } from "../components/Firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
 
 export const userContext = createContext()
 const { Provider } = userContext
@@ -59,8 +59,6 @@ const UserContext = ({children}) => {
     setRegisterEmail(i) 
     if (validator.isEmail(registerEmail)) {
       setEmailTrue(true)
-    } else {
-      console.log("no es email")
     }
   }
 
@@ -68,8 +66,6 @@ const UserContext = ({children}) => {
     setRegisterPassword(i)
     if (validator.isStrongPassword(registerPassword)) {
       setPassTrue(true)
-    } else {
-      console.log("no es password")
     }
   }
 
@@ -118,8 +114,6 @@ const UserContext = ({children}) => {
       );
       setError("")
     } catch (error) {
-      console.log(error.code);
-      // setError(error.code);
       handleError(error.code)
     }
   }
@@ -131,16 +125,12 @@ const UserContext = ({children}) => {
     setLoginPassword("")
   }
 
-
-
   const user = {
     regEmail : registerEmail,
     regPassword : registerPassword,
     logEmail : loginEmail,
     logPassword : loginPassword.at,
     usuario : usuario,
-    nombre : nombre,
-    telefono : telefono,
     error : error,
 
     regEmail : regEmail,

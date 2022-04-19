@@ -1,34 +1,42 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import { useContext } from 'react'
 import { cartContext } from './Context'
 import { userContext } from '../userComponent/UserContext'
 import { NavLink } from 'react-router-dom'
 import { db } from '../components/Firebase'
-import { collection, addDoc, serverTimestamp} from 'firebase/firestore'
+import { collection, addDoc, serverTimestamp, query, where, getDocs} from 'firebase/firestore'
 
 const CartContainer = () => {
 
   const {carrito, total, removeItem, clear} = useContext(cartContext)
-  const {usuario, nombre, telefono } = useContext(userContext)
+  const {usuario} = useContext(userContext)
 
-  console.log(nombre)
-  console.log(telefono)
-  console.log(usuario.email)
+  
+  const infoUser = async () => {
+    const usuarioCollection = collection(db, "user")
+    const userDoc = query(usuarioCollection, where("email", "==", usuario.email))
+    const docu = getDocs(userDoc)
+    docu
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const orden = {
+          buyer: {
+            user: usuario.email,
+            name: doc.data().nombre,
+            phone: doc.data().telefono
+          },
+          item: carrito,
+          date: serverTimestamp(),
+          total: total
+        }
+        handleOrden(orden)
+      })
+    })
+  }
 
-  const handleOrden = () => {
-    const orden = {
-      buyer: {
-        nombre: nombre,
-        telefono: telefono,
-        email: usuario.email
-      },
-      item: carrito,
-      date: serverTimestamp(),
-      total: total
-    }
-
+  const handleOrden = (i) => {
     const ordenColeccion = collection(db, "ordenes")
-    const document = addDoc(ordenColeccion, orden)
+    const document = addDoc(ordenColeccion, i)
     document
     .then(()=>{
       console.log("Orden enviada") 
@@ -61,7 +69,7 @@ const CartContainer = () => {
           <NavLink to="/" className='texto link'>Seguir comprando</NavLink>
         </div>
         <div className='cFlex'>
-          <button className='texto link' onClick={() => {handleOrden()}}>Checkout</button>
+          <button className='texto link' onClick={() => {infoUser()}}>Checkout</button>
         </div>
       </div>
     </div> 
