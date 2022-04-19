@@ -14,14 +14,19 @@ const PathController = () => {
 
     if (location.pathname != "/user/LogIn" && location.pathname != "/user/SignUp") {
         return (
-            <div className="responsiveController cFlex">
-                <div className="paginaContainer cFlex">
-                    <NavBar/>
-                    <Banner/>
-                    <Main/>
-                    <FooterContainer/>
+            <>
+                <div className="responsiveController cFlex">
+                    <div className="paginaContainer cFlex">
+                        <NavBar/>
+                        {location.pathname == "/" || location.pathname == "/categoria/Poster" || location.pathname == "/categoria/Abstract" || location.pathname == "/categoria/LineArt"  ? 
+                            <Banner/> 
+                            : null
+                        }
+                        <Main/>
+                        <FooterContainer/>
+                    </div>
                 </div>
-            </div>
+            </>
         )
     } else {
         return(

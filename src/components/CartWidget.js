@@ -8,7 +8,7 @@ const CartWidget = () => {
   return (
     <div className="containerCart cFlex">
         <img src="/img/icon/cart.svg"></img>
-        { cantidad > 0 ? <p>{cantidad}</p> : null }
+        { cantidad > 0 ? <div className='cantidadWidget cFlex'><p className='link'>{cantidad}</p></div> : null }
     </div>
   )
 }

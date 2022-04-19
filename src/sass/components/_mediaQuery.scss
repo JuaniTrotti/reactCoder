@@ -2,11 +2,11 @@
     // paginaContainer Start
     .paginaContainer {
         max-width: 1680px;
+        height: auto;
         flex-grow: 1;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px;
     }
     // paginaContainer End
 
@@ -25,11 +25,11 @@
 @media screen and (max-width: 1700px) {
        // paginaContainer Start
        .paginaContainer {
+        height: auto;
         flex-grow: 1;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px;
     }
     // paginaContainer End 
 }

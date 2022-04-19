@@ -15,20 +15,31 @@ const NavBar = () => {
                     <Link to="/" className="tLogo"><img src="./img/icon/logoApp.svg" alt="" /></Link>
                 </div>
                 <nav className="containerNav cFlex">
-                    <NavLink to="/categoria/Poster" className="link">Poster</NavLink>
-                    <NavLink to="/categoria/LineArt" className="link">Line Art</NavLink>
-                    <NavLink to="/categoria/Abstract" className="link">Abstract</NavLink>
+                    <NavLink to="/categoria/Poster" className="link navBarLink">Poster</NavLink>
+                    <NavLink to="/categoria/LineArt" className="link navBarLink">Line Art</NavLink>
+                    <NavLink to="/categoria/Abstract" className="link navBarLink">Abstract</NavLink>
                 </nav>
                 <div className="containerLog cFlex">
-                    {  usuario == null ? 
+                    { cantidad > 0 ? <NavLink to="/carrito" className="widgetContainer cFlex"><CartWidget/></NavLink> : null }
+                    { usuario == null ? 
                         <>
-                            <NavLink to="/user/LogIn" className="link">LogIn</NavLink> 
-                            <NavLink to="/user/SignUp" className="link">SignUp</NavLink> 
+                            <div className="loginBtnContainer cFlex">
+                                <NavLink to="/user/LogIn" className="link navBarLink">Log In</NavLink> 
+                            </div>
+                            <div className="signUpBtnContainer cFlex">
+                                <NavLink to="/user/SignUp" className="link regBtn">Sign Up</NavLink> 
+                            </div>
                         </>
                         :
-                        <button onClick={logOut}> LogOut</button>
+                        <div className="logOutContainer cFlex">  
+                            <div className="nameContainer cFlex">
+                                <p className="name">trotti</p>   
+                            </div>
+                            <div className="logOutBtnContainer cFlex">
+                                <button onClick={logOut} className="btnLogOut">LogOut</button>
+                            </div>
+                        </div>
                     }
-                    { cantidad > 0 ? <NavLink to="/carrito"><CartWidget/></NavLink> : null }
                 </div>
             </section>
         </header>

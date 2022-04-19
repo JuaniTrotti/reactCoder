@@ -34,9 +34,9 @@ const ItemCount = ({initial, stock, onAdd}) => {
     <>
       <div className="countContainer cFlex">
         <section className="containerCountBtn cFlex">
-          <button onClick={countSubtract} className="btnSubtract">-</button>
-          <p>{contador}</p>
-          <button onClick={countPlus} className="btnPlus">+</button>
+          <button onClick={countSubtract} className="btnSubtract cFlex">-</button>
+          <p className='contadorShow cFlex'>{contador}</p>
+          <button onClick={countPlus} className="btnPlus cFlex">+</button>
         </section>
         <section className="containerAddBtn cFlex">
           <button onClick={countReset} className="btnAdd">Confirm</button>

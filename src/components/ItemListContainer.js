@@ -36,7 +36,6 @@ const ItemListContainer = (props) => {
   return (
     <>
       <div className="containerList cFlex">
-          <h1 className="tTitulo">{props.nombre}</h1>
           { loading ? <h1>Cargando...</h1> : <ItemList producto={produ}/> }
       </div>
     </>
