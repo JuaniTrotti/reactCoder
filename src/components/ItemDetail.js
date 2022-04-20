@@ -17,7 +17,6 @@ const ItemDetail = ({producto}) => {
         }
     }
 
-    console.log(producto)
     return (
         <>
             <section className='sectionInfo cFlex'>

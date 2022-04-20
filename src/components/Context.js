@@ -18,7 +18,6 @@ const Context = ({children}) => {
         let precioTotal = 0
         let cantidadTotal = 0
         carrito.map(i => {
-            console.log(i.item.item.price)
             precioTotal = precioTotal + (i.item.item.price * i.cantidad)
             cantidadTotal = cantidadTotal + i.cantidad
         })

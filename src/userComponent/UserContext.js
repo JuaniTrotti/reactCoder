@@ -30,7 +30,6 @@ const UserContext = ({children}) => {
   });
 
   const handleError = (err) => {
-    console.log(typeof(err))
     if (err === "auth/user-not-found") {
       setError("no existe el usuario");
     } else if (err === "auth/wrong-password") {
