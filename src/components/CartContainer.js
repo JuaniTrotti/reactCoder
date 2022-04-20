@@ -68,7 +68,7 @@ const CartContainer = () => {
           <NavLink to="/" className='texto link'>Seguir comprando</NavLink>
         </div>
         <div className='cFlex'>
-          <button className='texto link' onClick={() => {infoUser()}}>Checkout</button>
+          <button className='texto link' onClick={infoUser}>Checkout</button>
         </div>
       </div>
     </div> 

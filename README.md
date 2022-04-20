@@ -1,3 +1,4 @@
+# **no anda el logIn, si creas una cuenta de cero anda bien (no pude implementar bien el firabase auth)**
 
 # Proyecto ReactJs CoderHouse
 

@@ -33,7 +33,8 @@ const SignUp = () => {
               </div>
             </div>
             <div className='containerBtn cFlex'>
-              {passTrue && emailTrue ? <NavLink to="/" className="btnCon cFlex"><button onClick={register} className='textoBtn cFlex'>Sign Up</button></NavLink> : <div className='btnCon cFlex'><button className='textoBtn bloq cFlex'>Sign Up</button></div>}
+              {/* {passTrue && emailTrue ? <NavLink to="/" className="btnCon cFlex"><button onClick={register} className='textoBtn cFlex'>Sign Up</button></NavLink> : <div className='btnCon cFlex'><button className='textoBtn bloq cFlex'>Sign Up</button></div>} */}
+              <NavLink to="/" className="btnCon cFlex"><button onClick={register} className='textoBtn cFlex'>Sign Up</button></NavLink>
               <NavLink to="/user/LogIn" className="btnCon cFlex"><button className='textoBtn cFlex'>Log In</button></NavLink>
             </div>
           </div>

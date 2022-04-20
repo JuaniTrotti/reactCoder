@@ -26,7 +26,7 @@ const LogIn = () => {
               {error ? <p className='error'>{error}</p> : null}
             </div>
             <div className='containerBtn cFlex'>
-              <div className="btnCon cFlex"><button className="textoBtn cFlex" onClick={logIn}>Log In</button></div>
+              <div className='btnCon cFlex'><button onClick={logIn} className='textoBtn cFlex'>Log In</button></div>
               <NavLink to="/user/SignUp" className="btnCon cFlex"><button className='textoBtn cFlex'>Sign Up</button></NavLink>
             </div>
           </div>
