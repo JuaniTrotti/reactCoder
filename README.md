@@ -96,7 +96,7 @@ Este componente se encarga de traer del **context** todos los elementos que se h
 Este componente se renderiza todo el tiempo, contiene el footer.
 
 
-
+-------------------------------------------------------------------------------------------------------------------
 ## Provider UserContext
 Manejo de Usuarios junto a Firabase/Auth
 
