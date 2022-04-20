@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { useContext } from 'react'
 import { cartContext } from './Context'
 import { userContext } from '../userComponent/UserContext'

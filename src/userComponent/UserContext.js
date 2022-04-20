@@ -1,9 +1,9 @@
-import { createContext, useState, useEffect } from "react"
+import { createContext, useState } from "react"
 import validator from "validator"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, } from "firebase/auth";
 import { auth } from "../components/Firebase";
 import { db } from "../components/Firebase";
-import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
 export const userContext = createContext()
 const { Provider } = userContext
@@ -126,9 +126,9 @@ const UserContext = ({children}) => {
   }
 
   const user = {
-    regEmail : registerEmail,
+    registerEmail : registerEmail,
     regPassword : registerPassword,
-    logEmail : loginEmail,
+    loginEmail : loginEmail,
     logPassword : loginPassword.at,
     usuario : usuario,
     error : error,

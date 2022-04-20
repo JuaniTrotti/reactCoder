@@ -3,30 +3,7 @@ import { userContext } from './UserContext';
 import { NavLink } from 'react-router-dom';
 
 const LogIn = () => {
-  const { logEmail, logPass, logIn, usuario, error } = useContext(userContext)
-  // return (
-  //   <div className="App">
-  //   <div>
-  //     <h3> Log In </h3>
-  //     <input
-  //       placeholder="Email..."
-  //       onChange={(event) => {
-  //         logEmail(event.target.value);
-  //       }}
-  //     />
-  //     <input
-  //       placeholder="Password..."
-  //       onChange={(event) => {
-  //         logPass(event.target.value);
-  //       }}
-  //     />
-
-
-
-      
-
-  //   </div>
-  // </div>
+  const { logEmail, logPass, logIn, error } = useContext(userContext)
   return (
     <>
       <div className="signUpContainer cFlex">
@@ -49,15 +26,14 @@ const LogIn = () => {
               {error ? <p className='error'>{error}</p> : null}
             </div>
             <div className='containerBtn cFlex'>
-              <div className="btnCon cFlex"><button onClick={logIn} className="textoBtn cFlex">LogIn</button></div>
+              <div className="btnCon cFlex"><button className="textoBtn cFlex" onClick={logIn}>Log In</button></div>
               <NavLink to="/user/SignUp" className="btnCon cFlex"><button className='textoBtn cFlex'>Sign Up</button></NavLink>
-              {/* {passTrue && emailTrue ? <NavLink to="/" className="btnCon cFlex"><button onClick={register} className='textoBtn cFlex'>Sign Up</button></NavLink> : <div className='btnCon cFlex'><button className='textoBtn bloq cFlex'>Sign Up</button></div>} */}
             </div>
           </div>
         </div>
       </div>
       <div className='inicioBtn'>
-        <NavLink to="/"><img src="../img/icon/logoApp.svg" alt="" /></NavLink>
+        <NavLink to="/"><img src="../img/icon/logoApp.svg" alt="iconoInicio" /></NavLink>
       </div>
     </>
   )

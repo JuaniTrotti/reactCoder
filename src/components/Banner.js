@@ -6,11 +6,11 @@ const Banner = () => {
   const [path, setPath] = useState("");
 
   useEffect(() => {
-      if (location.pathname == "/categoria/Poster") {
+      if (location.pathname === "/categoria/Poster") {
           setPath("Poster");
-      } else if (location.pathname == "/categoria/LineArt") {
+      } else if (location.pathname === "/categoria/LineArt") {
           setPath("Line Art");
-      } else if (location.pathname == "/categoria/Abstract") {
+      } else if (location.pathname === "/categoria/Abstract") {
           setPath("Abstract");
       } else {
           setPath("Overview");

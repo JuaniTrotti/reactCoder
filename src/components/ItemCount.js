@@ -6,7 +6,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
   const [error, setError] = useState("")
 
   const countPlus = () => {
-    if(contador == stock) {
+    if(contador === stock) {
       setCount(contador)
       setError(`El stock es ${stock} unidades`)
     } else {
@@ -16,7 +16,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
   }
 
   const countSubtract = () => {
-    if(contador == initial) {
+    if(contador === initial) {
       setCount(contador)
     } else {
       setCount(contador - 1)

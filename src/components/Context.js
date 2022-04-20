@@ -50,7 +50,7 @@ const Context = ({children}) => {
     }
 
     const isInCart = (item) => {
-        const resultado = carrito.some(i => i.item.id == item)
+        const resultado = carrito.some(i => i.item.id === item)
         return resultado
     }
 

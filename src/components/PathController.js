@@ -12,13 +12,13 @@ import { useLocation } from "react-router-dom";
 const PathController = () => {
     const location = useLocation();
 
-    if (location.pathname != "/user/LogIn" && location.pathname != "/user/SignUp") {
+    if (location.pathname !== "/user/LogIn" && location.pathname !== "/user/SignUp") {
         return (
             <>
                 <div className="responsiveController cFlex">
                     <div className="paginaContainer cFlex">
                         <NavBar/>
-                        {location.pathname == "/" || location.pathname == "/categoria/Poster" || location.pathname == "/categoria/Abstract" || location.pathname == "/categoria/LineArt"  ? 
+                        {location.pathname === "/" || location.pathname === "/categoria/Poster" || location.pathname === "/categoria/Abstract" || location.pathname === "/categoria/LineArt"  ? 
                             <Banner/> 
                             : null
                         }

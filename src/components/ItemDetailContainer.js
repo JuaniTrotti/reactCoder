@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
 import { db } from '../components/Firebase'
 import ItemDetail from './ItemDetail'
-import { getDocs , collection, query, where, doc } from 'firebase/firestore'
+import { getDocs , collection, query, where } from 'firebase/firestore'
 
 
 const ItemDetailContainer = () => {
@@ -23,7 +23,6 @@ const ItemDetailContainer = () => {
     .finally(() => setLoad(false))
   }, [])
 
-  console.log(item)
   return (
     <>
         <div className='containerItem cFlex'>

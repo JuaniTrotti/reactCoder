@@ -12,7 +12,7 @@ const ItemDetail = ({producto}) => {
     const { usuario } = useContext(userContext)
     
     const onAdd = (unidadesSelec) => {
-        if (unidadesSelec != undefined) {
+        if (unidadesSelec !== undefined) {
             setSelec(unidadesSelec)
         }
     }
@@ -33,7 +33,7 @@ const ItemDetail = ({producto}) => {
                 <section className='sec2 cFlex'>
                     <div className='priceContainer cFlex'>
                         <h2 className='itemPrecio'>usd {producto.item.price}</h2>
-                        {selec == false ? <ItemCount initial={1} stock={producto.item.stock} onAdd={onAdd}/> 
+                        {selec === false ? <ItemCount initial={1} stock={producto.item.stock} onAdd={onAdd}/> 
                                         : usuario == null ?
                                         <div className='addItemContainer cFlex'><NavLink className="addToBag" to="/user/LogIn" onClick={() => {addItem(producto, selec)}}>Log In</NavLink></div>
                                         : <div className='addItemContainer cFlex'><NavLink className="addToBag" to="/carrito" onClick={() => {addItem(producto, selec)}}>Add to bag</NavLink></div>}
